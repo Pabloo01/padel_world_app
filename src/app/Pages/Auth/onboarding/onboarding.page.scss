@@ -1,0 +1,41 @@
+ion-content {
+  --ion-font-family: 'prueba';
+
+  .container {
+    height: 100%;
+
+    background-color: black;
+
+    .logo, .gif {
+      display: flex;
+      justify-content: center;
+
+      img {
+        object-fit: contain;
+      }
+    }
+
+    .logo {
+      height: 50%;
+
+      align-items: center;
+
+      img {
+        height: 150px;
+        width: 350px;
+      }
+    }
+
+    .gif {
+      height: 50%;
+
+      align-items: flex-start;
+
+      img {
+        height: 125px;
+        width: 125px;
+      }
+    }
+  }
+
+}

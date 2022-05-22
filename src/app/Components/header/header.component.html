@@ -1,0 +1,19 @@
+<ion-toolbar color="light">
+  <div class="header">
+    <img src="./assets/images/logo.png" (click)="home()">
+
+    <div class="btns">
+      <a href="app/tabs/products">
+        <ion-icon name="home-outline"></ion-icon>
+      </a>
+
+      <a href="app/tabs/cart">
+        <ion-icon name="cart-outline"></ion-icon>
+      </a>
+
+      <a (click)="openPopover($event)">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </a>
+    </div>
+  </div>
+</ion-toolbar>

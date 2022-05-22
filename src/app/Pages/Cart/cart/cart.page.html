@@ -1,0 +1,52 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <div class="main">
+    <div class="prod-cart" *ngIf="productsCart">
+      <h2>Detalles de la cesta</h2>
+
+      <ion-list>
+        <ion-item *ngFor="let item of productsCart" lines="none">
+          <ion-thumbnail slot="start">
+            <img *ngIf="item?.product?.image" src={{item?.product?.image}}>
+            <img *ngIf="!item?.product?.image" src="./assets/images/default_image.png">
+          </ion-thumbnail>
+          <div class="prod">
+            <div>
+              <p class="name"><strong>{{item?.product?.name}}</strong></p>
+              <p>{{(item?.cuantity * item?.product?.price).toFixed(2)}} €</p>
+            </div>
+
+            <div>
+              <div class="input">
+                <ion-button color="dark" fill="outline" (click)="subCuantity(item?.id, item?.cuantity)">-</ion-button>
+                <p>{{item?.cuantity}}</p>
+                <ion-button color="dark" fill="outline"
+                            (click)="addCuantity(item?.id, item?.cuantity, item?.product?.stock, item?.product?.name)">+
+                </ion-button>
+              </div>
+
+              <div class="btn">
+                <ion-button color="danger" (click)="deleteItem(item?.id)">
+                  <ion-icon name="trash-outline"></ion-icon>
+                </ion-button>
+              </div>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="precio" *ngIf="precioTot > 0">
+      <p>TOTAL: <strong>{{precioTot.toFixed(2)}} €</strong></p>
+      <ion-button color="dark" (click)="setCuantity()">CONTINUAR</ion-button>
+    </div>
+    <app-empty-list *ngIf="!cargando && (!productsCart || productsCart.length === 0)" img="./assets/images/cesta.png"
+                    [length]=lengthCart msg="No tienes ningún producto en la cesta"></app-empty-list>
+  </div>
+  <app-footer></app-footer>
+</ion-content>
+
+

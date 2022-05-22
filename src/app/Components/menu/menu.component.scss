@@ -1,0 +1,25 @@
+ion-toolbar {
+}
+
+ion-content {
+  --ion-font-family: 'prueba';
+}
+
+ion-list {
+  ion-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    ion-label {
+      cursor: pointer;
+    }
+  }
+
+  .logout {
+    color: #eb445a;
+  }
+}
+
+
+
+

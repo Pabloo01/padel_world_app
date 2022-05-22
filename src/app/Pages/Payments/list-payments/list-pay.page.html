@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()" color="danger">
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>Cartera</h2>
+  <ion-list>
+    <ion-item-sliding #itemsl *ngFor="let item of paymentUser">
+      <ion-item lines="none">
+        <div class="tarj">
+          <p><strong>Número:</strong> {{item.iban}}</p>
+          <p><strong>Titular:</strong> {{item.name}}</p>
+          <p><strong>Fecha de expedición:</strong> {{item.expiration_month}}/{{item.expiration_year}}</p>
+        </div>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" expandable (click)="confirmDeletePay(item.id, itemsl)">
+          <ion-icon name="trash-outline"></ion-icon>
+          <p class="sld">Eliminar</p>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <app-empty-list img="./assets/images/wallet.png" [length]=lengthPay msg="No tienes ninguna tarjeta"></app-empty-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openModalPay()" color="dark">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,95 @@
+ion-item-options {
+  ion-item-option {
+    ion-icon {
+      padding: 0px 5px;
+    }
+  }
+}
+
+ion-content {
+  --ion-font-family: 'prueba';
+
+  .main {
+    width: 100%;
+    min-height: 93%;
+
+    .lista-productos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 50px;
+
+      .producto {
+        width: 250px;
+
+        background-color: white !important;
+
+        border: 1.75px solid rgb(136, 172, 0);
+        border-radius: 7.5px;
+
+        box-shadow: 1.5px 1.5px rgba(168, 215, 3, 0.6);
+
+        margin: 15px;
+        padding: 10px;
+
+        .info {
+          display: grid;
+          height: 85%;
+
+          .imagen {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            img {
+              height: 180px;
+              width: 135px;
+
+              object-fit: contain;
+            }
+          }
+
+
+          h2 {
+            text-align: center;
+          }
+
+          h4 {
+            text-align: right;
+            font-size: 17.5px !important;
+          }
+
+          p {
+            padding-bottom: 10px;
+            color: #787878;
+          }
+        }
+
+        .btns {
+          height: 15%;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          gap: 15px;
+        }
+      }
+    }
+
+    .mypagination ::ng-deep {
+      .ngx-pagination {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+      }
+
+      .ngx-pagination .current {
+        background-color: rgb(168, 215, 3) !important;
+      }
+    }
+  }
+}
+
+
+

@@ -1,0 +1,77 @@
+ion-content {
+  --ion-font-family: 'prueba';
+  height: 100%;
+
+  .main {
+    width: 100%;
+    min-height: 91%;
+
+    .prod-cart {
+      margin: 10px 40px;
+
+      h2 {
+        padding-bottom: 5px;
+        margin-top: 20px;
+      }
+
+      ion-list {
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        border-radius: 5px;
+
+        ion-item {
+          border-bottom: 1px solid black;
+
+          img {
+            object-fit: contain;
+            background-color: white;
+          }
+
+          .prod {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .name {
+              width: 65%;
+            }
+
+            .input {
+              width: 225px;
+            }
+
+            .btn {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+            }
+          }
+        }
+
+        div {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+
+    .precio {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 40px;
+
+      ion-button {
+        margin-left: 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+
+

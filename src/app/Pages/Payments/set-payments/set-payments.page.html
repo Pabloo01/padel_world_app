@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()" color="danger">
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{payForm.id ? 'Editar tarjeta' : 'Añadir tarjeta'}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="setPay(payForm, payForm.id)" color="dark">
+        Guardar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none">
+    <ion-label class="label" position="stacked">Número de la tarjeta</ion-label>
+    <ion-input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19" [(ngModel)]="payForm.iban"></ion-input>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label class="label" position="stacked">Nombre</ion-label>
+    <ion-input type="text" placeholder="Nombre del titular" [(ngModel)]="payForm.name"></ion-input>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label class="label" position="stacked">Fecha de expedición</ion-label>
+    <div class="fechaExp">
+      <ion-input class="input" type="number" placeholder="MM" [(ngModel)]="payForm.expiration_month"></ion-input>
+      <ion-input class="input" type="number" placeholder="AAAA" [(ngModel)]="payForm.expiration_year"></ion-input>
+    </div>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label class="label" position="stacked">CVV</ion-label>
+    <ion-input type="password" placeholder="XXX" maxlength="3" [(ngModel)]="payForm.cvv"></ion-input>
+  </ion-item>
+</ion-content>

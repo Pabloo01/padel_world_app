@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()" color="danger">
+        Cancelar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-radio-group value="pago" [(ngModel)]="paySelected" (ionChange)="checkPay(paySelected)">
+      <ion-list-header>
+        <ion-label>Cartera</ion-label>
+      </ion-list-header>
+
+      <ion-item *ngFor="let item of paymentUser; let i=index" lines="none">
+        <ion-label>Tarjeta {{i + 1}} : {{item.iban}}</ion-label>
+        <ion-radio color="dark" slot="end" value="{{item.id}}"></ion-radio>
+      </ion-item>
+      <ion-item *ngIf="paymentUser == 0" lines="none">
+        <ion-label (click)="openModalPay()"><u>Añadir tarjeta de pago</u></ion-label>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-list-header class="header2">
+    <ion-label>Dirección de envio</ion-label>
+  </ion-list-header>
+
+  <ion-item lines="none">
+    <ion-label>{{user.address}}</ion-label>
+    <ion-label class="editAddress" (click)="openUser()"><u>Editar</u></ion-label>
+  </ion-item>
+
+  <div class="pay">
+    <ion-button color="dark" (click)="buyCartItems()">Confirmar compra</ion-button>
+  </div>
+
+</ion-content>

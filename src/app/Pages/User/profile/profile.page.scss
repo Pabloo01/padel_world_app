@@ -1,0 +1,112 @@
+ion-content {
+  --ion-font-family: 'prueba';
+
+  .main {
+    width: 100%;
+    min-height: 93%;
+
+    .user {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      padding-bottom: 5px;
+
+      border-bottom: 1px solid black;
+
+      .info-user {
+        display: grid;
+
+        text-align: center;
+
+        p:first-child {
+          font-size: 18px;
+        }
+
+        p:last-child {
+          margin: 0 0 16px 0;
+        }
+      }
+    }
+
+    .btn {
+      display: flex;
+      justify-content: space-between;
+
+      margin: 20px;
+
+      ion-button {
+        font-size: 14px;
+
+        ion-icon {
+          padding-right: 10px;
+        }
+      }
+    }
+
+    .prod-comprados {
+      padding: 15px;
+
+      ion-list {
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        border-radius: 5px;
+
+        ion-item {
+          border-bottom: 1px solid black;
+
+          padding: 15px 0px;
+
+          img {
+            object-fit: contain;
+          }
+        }
+
+        div {
+          width: 100%;
+
+          p {
+            margin: 5px 0;
+          }
+
+          .nombre {
+            font-size: 18.5px;
+          }
+
+          .cant {
+            font-size: 15px;
+          }
+
+          .fecha {
+            font-size: 15px;
+            color: darkgray;
+          }
+
+          div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .precio {
+              color: black;
+            }
+          }
+        }
+      }
+
+      .mypagination ::ng-deep {
+        .ngx-pagination {
+          display: flex;
+          justify-content: center;
+          padding: 0;
+        }
+
+        .ngx-pagination .current {
+          background-color: rgb(168, 215, 3) !important;
+        }
+      }
+    }
+  }
+}

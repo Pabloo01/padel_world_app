@@ -1,0 +1,67 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <div class="main">
+    <div class="user">
+      <section class="info-user">
+        <p><strong>{{user.name}} <span *ngIf="user.admin">(Administrador)</span></strong></p>
+        <p>{{user.email}}</p>
+      </section>
+    </div>
+
+    <div class="btn">
+      <ion-button color="dark" (click)="openUser()">
+        <ion-icon name="cog-outline"></ion-icon>
+        Editar datos
+      </ion-button>
+
+      <ion-button *ngIf="user.admin == 1" color="dark" (click)="openFam()">
+        <ion-icon name="file-tray-full-outline"></ion-icon>
+        Gestionar familias
+      </ion-button>
+
+      <ion-button color="dark" (click)="goToPay()">
+        <ion-icon name="wallet-outline"></ion-icon>
+        Cartera
+      </ion-button>
+    </div>
+
+    <div class="prod-comprados">
+      <h2>Productos comprados</h2>
+
+      <ion-list>
+        <ion-item *ngFor="let item of productsPurch | paginate: { itemsPerPage: 4, currentPage: page }" lines="none">
+          <ion-thumbnail slot="start">
+            <img *ngIf="item?.product?.image" src={{item?.product?.image}}>
+            <img *ngIf="!item?.product?.image" src="./assets/images/default_image.png">
+          </ion-thumbnail>
+          <div>
+            <p class="nombre"><strong>{{item?.product?.name}}</strong></p>
+
+            <div>
+              <p class="cant">Unidades: {{item?.cuantity}}</p>
+              <p class="precio"><strong>{{item?.cuantity * item?.product?.price}} €</strong></p>
+            </div>
+
+            <p class="fecha">{{item?.purchase_date | date:'dd/MM/yyyy - HH:mm:ss'}}</p>
+          </div>
+        </ion-item>
+      </ion-list>
+
+      <pagination-controls *ngIf="lengthProdPurch != 0 && lengthProdPurch > 3" class="mypagination"
+                           (pageChange)="page = $event"
+                           previousLabel=""
+                           nextLabel=""
+                           [maxSize]=4>
+      </pagination-controls>
+
+      <app-empty-list img="./assets/images/price-tag.png" [length]=lengthProdPurch msg="Aún no has comprado ningún producto"></app-empty-list>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</ion-content>
+
+

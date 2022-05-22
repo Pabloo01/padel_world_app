@@ -1,0 +1,29 @@
+ion-toolbar {
+  --ion-font-family: 'prueba';
+}
+
+ion-content {
+  --ion-font-family: 'prueba';
+
+  ion-item {
+  }
+
+  .msg {
+    font-size: 12px;
+    color: #6b6b6b;
+
+    padding-left: 17.5px;
+  }
+
+  ion-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+  }
+}
+
+.required {
+  color: red;
+}

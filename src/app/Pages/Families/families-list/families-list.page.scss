@@ -1,0 +1,56 @@
+ion-item-options {
+  ion-item-option {
+    ion-icon {
+      padding: 0px 5px;
+    }
+  }
+}
+
+ion-toolbar {
+}
+
+ion-content {
+  --ion-font-family: 'prueba';
+
+  h1 {
+    padding-left: 15px;
+    padding-bottom: 7.5px;
+    border-bottom: 1px solid black;
+    font-size: 24px;
+  }
+}
+
+.numProd {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: darkgray;
+  border-radius: 50%;
+
+  margin-right: 7.5px;
+}
+
+.families {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.descripcion {
+  color: darkgray;
+}
+
+.mypagination ::ng-deep {
+  .ngx-pagination {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .ngx-pagination .current {
+    background-color: rgb(168, 215, 3) !important;
+  }
+}

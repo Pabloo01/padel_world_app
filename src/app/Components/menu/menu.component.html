@@ -1,0 +1,32 @@
+<ion-menu side="start" menuId="menu-content" contentId="main-content" swipeGesture="false">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Ajustes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-icon color="dark" name="construct-outline" slot="start"></ion-icon>
+        <ion-label (click)="openUser()">Modificar datos</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="dark" name="wallet-outline" slot="start"></ion-icon>
+        <ion-label (click)="goToPay()">Cartera</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="dark" name="bag-check-outline" slot="start"></ion-icon>
+        <ion-label (click)="openPurchasedProd()">Productos comprados</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="dark" slot="start" name="thumbs-up-outline"></ion-icon>
+        <ion-label (click)="openUserReviews()">Tus valoraciones</ion-label>
+      </ion-item>
+      <ion-item class="logout">
+        <ion-icon color="danger" name="log-out-outline" slot="start"></ion-icon>
+        <ion-label (click)="outToApp()">Cerrar sesión</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

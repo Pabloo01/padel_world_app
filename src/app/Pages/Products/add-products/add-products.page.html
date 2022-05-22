@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()" color="danger">
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{form.id ? 'Editar producto' : 'Añadir productos'}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="setProduct(form, form.id)">
+        {{form.id ? 'Editar' : 'Añadir'}}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label class="label" position="stacked">Nombre</ion-label>
+    <ion-input max="100" [(ngModel)]="form.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label2">Familia</ion-label>
+    <ion-select interface="popover" [(ngModel)]="form.family_id" placeholder="Selecciona familia">
+      <ion-select-option *ngFor="let item of families" [value]="item.id">{{item.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label" position="stacked">Precio</ion-label>
+    <ion-input type="number" min="0" step="0.01" [(ngModel)]="form.price"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label" position="stacked">Descripción</ion-label>
+    <ion-textarea [(ngModel)]="form.description"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label" position="stacked">Stock</ion-label>
+    <ion-input type="number" min="0" [(ngModel)]="form.stock"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label" position="stacked">Imagen</ion-label>
+    <ion-input type="file" (change)="onFileSelected($event)"></ion-input>
+  </ion-item>
+</ion-content>
+

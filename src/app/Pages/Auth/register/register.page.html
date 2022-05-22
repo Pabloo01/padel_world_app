@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro de usuario</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="return()" color="dark">
+        Volver
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Usuario <span class="required">*</span></ion-label>
+    <ion-input type="text" [(ngModel)]="form.name" maxlength="100"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Email <span class="required">*</span></ion-label>
+    <ion-input type="text" [(ngModel)]="form.email" maxlength="50"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Dirección <span class="required">*</span></ion-label>
+    <ion-input type="text" [(ngModel)]="form.address" maxlength="100"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contraseña <span class="required">*</span></ion-label>
+    <ion-input type="password" [(ngModel)]="form.password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Repetir contraseña <span class="required">*</span></ion-label>
+    <ion-input type="password" [(ngModel)]="form.password_confirmation"></ion-input>
+  </ion-item>
+  <p class="msg">Los campos que contienen * son obligatorios</p>
+  <ion-row>
+    <ion-button color="dark" fill="outline" (click)="signUp(form)">Crear cuenta</ion-button>
+  </ion-row>
+</ion-content>

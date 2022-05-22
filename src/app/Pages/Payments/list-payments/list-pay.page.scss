@@ -1,0 +1,40 @@
+ion-toolbar {
+  border-bottom: 1px solid rgb(168, 215, 3);
+}
+
+ion-content {
+  --ion-font-family: 'prueba';
+
+  h2 {
+    border-bottom: 1px solid black;
+    padding-bottom: 7.5px;
+    padding-left: 16px;
+  }
+
+  ion-list {
+    ion-item {
+      .tarj {
+        display: grid;
+
+        margin: 0 0;
+
+        p {
+          margin: 7.5px 0;
+        }
+      }
+
+      border-bottom: 1px solid black;
+    }
+
+    p {
+      color: black;
+    }
+
+    .sld {
+      color: white;
+      padding-left: 5px;
+    }
+  }
+}
+
+

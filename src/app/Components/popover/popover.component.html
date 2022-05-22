@@ -1,0 +1,5 @@
+<ion-list>
+  <ion-item button (click)="updateReview()" *ngIf="user.id == review.user.id">Modificar</ion-item>
+  <ion-item lines="none" detail="false" button (click)="alertConfirmDelete()">Eliminar</ion-item>
+</ion-list>
+

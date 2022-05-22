@@ -1,0 +1,21 @@
+.emptyList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  height: 70%;
+
+  text-align: center;
+
+  margin: 50px 40px;
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  h3 {
+    font-size: 18.5px;
+  }
+}

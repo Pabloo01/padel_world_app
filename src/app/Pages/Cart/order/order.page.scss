@@ -1,0 +1,47 @@
+ion-toolbar {
+  border-bottom: 1px solid rgb(168, 215, 3);
+}
+
+ion-content {
+  --ion-font-family: 'prueba';
+
+  ion-list-header {
+    border-bottom: 1px solid black;
+
+    margin-bottom: 7.5px;
+
+    height: 50px;
+
+    font-size: 22px;
+  }
+
+  ion-list {
+  }
+
+  ion-item {
+    --border-color: black;
+  }
+
+  .header2 {
+    margin-top: 30px;
+  }
+}
+
+.pay {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 50px;
+}
+
+u {
+  cursor: pointer;
+}
+
+.editAddress {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

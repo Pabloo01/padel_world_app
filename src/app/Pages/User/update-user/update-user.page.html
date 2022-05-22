@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()" color="danger">
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="updateUser(form)" color="dark">
+        Guardar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3>Datos personales</h3>
+
+  <ion-item>
+    <ion-label class="label" position="stacked">Usuario</ion-label>
+    <ion-input type="text" [(ngModel)]="form.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label" position="stacked">Email</ion-label>
+    <ion-input type="text" [(ngModel)]="form.email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label" position="stacked">Dirección</ion-label>
+    <ion-input type="text" [(ngModel)]="form.address"></ion-input>
+  </ion-item>
+
+  <h3 class="pass">Cambiar contraseña</h3>
+
+  <ion-item>
+    <ion-label class="label" position="stacked">Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="form.oldPassword"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label" position="stacked">Nueva contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="form.password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label" position="stacked">Repetir contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="form.password_confirmation"></ion-input>
+  </ion-item>
+</ion-content>

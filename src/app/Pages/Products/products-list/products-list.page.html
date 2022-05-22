@@ -1,0 +1,74 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <div class="main">
+    <ion-searchbar [(ngModel)]="searchProduct" (ionChange)="setFilterProducts()"
+                   placeholder="Buscar productos">
+    </ion-searchbar>
+    <ion-item class="famSel">
+      <ion-label>Categoría</ion-label>
+      <ion-select interface="popover" [(ngModel)]="familySelected" (ionChange)="filterProduct(familySelected)">
+        <ion-select-option [value]="-1">Todos</ion-select-option>
+        <ion-select-option *ngFor="let fam of families" [value]="fam.id">{{fam.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="order">
+      <ion-label>Ordenar por:</ion-label>
+      <ion-select interface="popover" [(ngModel)]="orderTo" (ionChange)="orderProd(orderTo)" class="custom-options">
+        <ion-select-option class="opcion" [value]="-1">Por defecto</ion-select-option>
+        <ion-select-option [value]="0">Nombre</ion-select-option>
+        <ion-select-option [value]="1">Precio</ion-select-option>
+        <ion-select-option *ngIf="user.admin == 1" [value]="2">Stock</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="lista-productos">
+      <div class="producto" *ngFor="let item of products | paginate: { itemsPerPage: 10, currentPage: page }">
+        <div class="info" (click)="openModalProd(item.id)">
+          <div class="imagen">
+            <img *ngIf="item.image" src={{item.image}}>
+            <img *ngIf="!item.image" src="./assets/images/default_image.png">
+          </div>
+
+          <h2>{{item.name}}</h2>
+          <h4>{{item.price.toFixed(2)}} €</h4>
+          <p *ngIf="user.admin == 1">Stock: {{item.stock}}</p>
+        </div>
+
+        <div class="btns">
+          <ion-button *ngIf="user.admin != 1" color="dark" fill="outline"
+                      (click)="openModalProd(item.id)">Ver producto
+          </ion-button>
+
+          <ion-button *ngIf="user.admin == 1" color="medium" size="small"
+                      (click)="openModal(item)">Modificar
+          </ion-button>
+          <ion-button *ngIf="user.admin == 1" color="danger" size="small"
+                      (click)="confirmDeleteProduct(item.id)">Eliminar
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <pagination-controls *ngIf="lengthProd != 0 && lengthProd > 8" class="mypagination"
+                         (pageChange)="page = $event"
+                         previousLabel=""
+                         nextLabel=""
+                         [maxSize]=4>
+    </pagination-controls>
+
+    <app-empty-list img="./assets/images/not-found.png" [length]=lengthProd msg="No hay resultados"></app-empty-list>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" *ngIf="user.admin == 1">
+    <ion-fab-button (click)="openModal()" color="dark">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <app-footer></app-footer>
+</ion-content>
+
+
+
