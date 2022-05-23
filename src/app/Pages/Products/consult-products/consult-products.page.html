@@ -33,7 +33,7 @@
                   *ngIf="!productCart && product?.stock >= 1">Añadir a la cesta
       </ion-button>
       <ion-button color="dark" expand="block" fill="outline" (click)="goToCart()"
-                  *ngIf="productCart && product?.stock >= 1">Producto añadido a la cesta
+                  *ngIf="productCart && product?.stock >= 1">Producto añadido en la cesta
       </ion-button>
       <ion-button color="danger" expand="block" fill="outline" *ngIf="product?.stock < 1">No disponible
       </ion-button>

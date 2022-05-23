@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <div class="header">
+      <img src="./assets/images/logo.png">
+
+      <div class="btns">
+        <a href="login">
+          Iniciar sesión
+        </a>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="sld-img">
+      <ion-slides pager="true" [options]="slideOpts" class="slides">
+        <ion-slide class="sld1">
+          <img alt="" src="assets/images/landing-img2.jpg">
+        </ion-slide>
+        <ion-slide class="sld2">
+          <img alt="" src="assets/images/landing-img.jpg">
+        </ion-slide>
+        <ion-slide class="sld3">
+          <img alt="" src="assets/images/landing-img3.jpg">
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+    <div class="info">
+      <img src="assets/images/logo.png">
+      <h1>Bienvenid@ a Padel World</h1>
+
+      <p>Tu mejor tienda online de padel donde encontrarás una amplia selección de palas de pádel, zapatillas,
+        paleteros, ropa de pádel y todo tipo de accesorios que te harán disfrutar de tu deporte preferido en su máxima
+        presión. Te lo garantizamos.</p>
+
+      <p>Asimismo, contamos con un extenso catálogo en el cual cada día se incluyen nuevos artículos para que los
+        padeleros más exigentes puedan encontrar <strong>las últimas novedades.</strong></p>
+
+      <p>No obstante, nuestro departamento de atención al cliente estará disponible para todo aquel que necesite
+        resolver cualquier tipo de duda con relación a una compra potencial. Un servicio formado por un equipo técnico
+        especializado en pádel que ofrecerá las mejores opciones a todos nuestros clientes.</p>
+
+      <p>Para acceder a nuestra web debes <strong><u (click)="goToLogin()">iniciar sesión</u></strong></p>
+    </div>
+  </div>
+</ion-content>

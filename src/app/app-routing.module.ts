@@ -21,6 +21,10 @@ const routes: Routes = [
     loadChildren: () => import('./Pages/Auth/register/register.module').then(m => m.SignUpPageModule)
   },
   {
+    path: 'landing',
+    loadChildren: () => import('./Pages/Auth/landing/landing.module').then(m => m.LandingPageModule)
+  },
+  {
     path: 'list-payments',
     loadChildren: () => import('./Pages/Payments/list-payments/list-pay.module').then(m => m.PayPageModule)
   },
