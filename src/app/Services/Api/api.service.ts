@@ -10,8 +10,8 @@ import {UserSessionService} from '../Models/user-session.service';
 export abstract class BaseApiService {
   public data: any;
   protected user: any;
-  protected baseUrl: string = 'https://api.training.yurest.com/api/';
-  protected apiBaseUrl: string = 'https://api.training.yurest.com/api/';
+  protected baseUrl: string = 'https://api.padelworldonline.es/api/';
+  protected apiBaseUrl: string = 'https://api.padelworldonline.es/api/';
 
   protected constructor(public http: HttpClient, public userSession: UserSessionService) {
     this.user = this.userSession.get();
